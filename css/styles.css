@@ -7,18 +7,10 @@
 
 html,
 body {
-  width: 1600px;
   background-color: #ffffff;
   color: var(--main-text-color);
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 .logo-font {
@@ -31,11 +23,11 @@ body {
 }
 
 .logo-header-color {
-  color: black;
+  color: var(--main-text-color);
 }
 
 .logo-footer-color {
-  color: white;
+  color: #ffffff;
 }
 
 h1,
@@ -49,26 +41,53 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 /* ---------------  HEADER  ----------------*/
 .page-header {
-  height: 80px;
+  /* height: 80px; */
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ececec;
 }
 
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 1px dashed red; */
+}
+
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.navigation li {
-  display: inline;
-  padding-left: 50px;
+.navigation {
+  display: flex;
+  list-style: none;
+}
+
+.navigation li:not(:first-child) {
+  margin-left: 50px;
+  /* outline: 1px dashed green; */
+}
+
+.navigation li:first-child {
+  margin-left: 93px;
+  /* outline: 1px dashed green; */
 }
 
 .font-nav {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
@@ -87,7 +106,10 @@ ul {
 }
 
 .font-contacts {
+  display: block;
   text-decoration: none;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -101,32 +123,36 @@ ul {
 }
 
 .contacts {
-  margin-left: 260px;
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  /* outline: 1px dashed green; */
 }
 
-.contacts li {
-  display: inline;
+.contacts li:not(:first-child) {
+  /* display: inline; */
   padding-left: 50px;
+  /* outline: 1px dashed green; */
 }
 
 /* ----------------  HERO  -----------------*/
 
 .section {
   padding-top: 94px;
-  outline: 1px dashed blue;
-  /* border-style: dotted; */
+  /* outline: 1px dashed blue; */
 }
 
-.effective {
+.hero {
   height: 600px;
   background: var(--accent-bcg-color);
+  /* text-align: center; */
+
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
-.font-main {
+.font-hero {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -151,15 +177,11 @@ ul {
   margin-top: 30px;
   background: var(--blue-color);
   color: #ffffff;
-}
-
-/* ------------  ПРЕИМУЩЕСТВА  -------------*/
-.container {
-  width: 1170px;
-  outline: 1px dashed red;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ------------  ПРЕИМУЩЕСТВА  -------------*/
 
 .benefits {
   display: flex;
@@ -170,7 +192,7 @@ ul {
   display: inline;
   flex-basis: calc(100% / 4 - 30px);
   margin-left: 30px;
-  outline: 1px dashed green;
+  /* outline: 1px dashed green; */
 }
 
 .font-fact-name {
@@ -206,7 +228,7 @@ ul {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
-  outline: 1px dashed red;
+  /* outline: 1px dashed red; */
 }
 
 /* -------------  НАША КОМАНДА  -------------*/
@@ -216,21 +238,24 @@ ul {
 }
 
 .command ul {
-  outline: 1px dashed red;
   display: flex;
   justify-content: center;
   margin-top: 50px;
-  margin-left: -30px;
+  /* outline: 1px dashed red; */
 }
 
 .person {
   background: #ffffff;
   display: inline;
-  flex-basis: calc(100% / 4 - 30px);
+  flex-basis: calc ((100% - 90px) / 4);
   margin-left: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.person:first-child {
+  margin-left: 0;
 }
 
 .person-text {
@@ -254,35 +279,38 @@ ul {
 
 /* --------------  FOOTER  --------------- */
 .footer {
-  height: 252px;
   padding: 60px 0;
   background: var(--accent-bcg-color);
 }
 
 .address {
-  outline: 1px dashed green;
   width: 230px;
   padding-top: 20px;
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
+  /* outline: 1px dashed green; */
 }
 
 .footer-contacts {
+  display: block;
   padding-top: 9px;
   text-decoration: none;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  /* outline: 1px dashed green; */
 }
 
 .footer-contacts:hover,
 .footer-contacts:focus {
   color: var(--blue-color);
+}
+
+.address ul {
+  list-style: none;
 }
 
 /* -------------- PORTFOLI0  -------------- */
@@ -293,14 +321,14 @@ ul {
 .control-panel {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .button-filter {
   margin-right: 8px;
   padding: 0 22px;
   background: #ffffff;
-  color: var(--blue-color);
+  color: var(--main-text-color);
 }
 
 .button-filter:hover,
@@ -311,18 +339,19 @@ ul {
 
 .portfolio-products {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   margin-left: -30px;
+  margin-bottom: -30px;
+  /* outline: 1px dashed blue; */
 }
 
 .product {
   display: inline;
   border: 1px solid #eeeeee;
-  flex-basis: calc(100% / 3 - 30px);
-  margin-top: 30px;
+  flex-basis: calc((100% - 90px) / 3);
   margin-left: 30px;
-  outline: 1px dashed green;
+  margin-bottom: 30px;
+  /*  outline: 1px dashed green; */
 }
 
 .product a {
